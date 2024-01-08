@@ -2,6 +2,8 @@
  
 [![Discord Presence](https://lanyard.cnrad.dev/api/1183889464129507378)](https://discord.com/users/1183889464129507378)
 
+--- DISCORD SERVER LINK : discord.gg/SOONNEGRO
+
 ---Hello, Me and iux will make Better tutorials soon. we will be making videos for it too just wait these tutorials were rushed cuz we didnt have alot time so if you dont understand something just dm me or iux on discord.
 
 --- yes ik these tutorials are very ass but i honestly dont give a fuck either find it out yourself or if your lucky dme me on discord and i might help
@@ -47,5 +49,9 @@ Also im not gonna leak any names of the people that gave me these scripts cuz i 
 (ALSO PLEASE DONT TRUST THIS GUY WITH ANYTHING HE LEGIT SENT ME SOMEONES FACE  HILE THE PERSON LEGIT TRUSTED HIM WITH IT HE ALSO TALKS BAD BEHIND EVERYONES BACK... No im not lying this is the truth.)
 
 Also i do not take any responsibility of yalls account if you get banned by using any of this stuff just make sure you're not an ed and got anticheat bypass executed.
+
+https://github.com/fuckedmywayuptothetopp/immos-scripts/assets/154433130/74cd2852-6994-4919-b248-861107b77718
+
+https://github.com/fuckedmywayuptothetopp/immos-scripts/assets/154433130/73e87d31-b2e5-4cd6-8c0f-653234f4f319
 
 
