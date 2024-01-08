@@ -1,0 +1,19 @@
+-- Requirements 
+-- 2 accounts real
+
+1. Knock your Alt account (not the one that u want inf trail on)
+
+2. Ragdoll carry his head and execute this on the account you're carrying your alt account with
+
+game.Players.knockedaccountsuser.Character.LowerTorso.Position = Vector3.new(0,-1200,0)
+game.Players.knockedaccountsuser.Character.RightUpperArm.Position = Vector3.new(0,-1200,0)
+game.Players.knockedaccountsuser.Character.LeftUpperArm.Position = Vector3.new(0,-1200,0)
+
+
+3. drop the account and execute iy or whatever
+
+4. use the sit cmd next to the knocked accounts torso and charge punch it
+
+5. you should have inf trail
+
+Ps : this is an rushed tutorial since im not gonna make any good ones since KidLord said hes gonna patch everything anyways figure it out yourself or cry (NOT HELPING ANY1 IN DMS BTW)
