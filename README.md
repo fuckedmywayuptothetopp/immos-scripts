@@ -2,11 +2,11 @@
  
 [![Discord Presence](https://lanyard.cnrad.dev/api/1183889464129507378)](https://discord.com/users/1183889464129507378)
 
---- DISCORD SERVER LINK : discord.gg/SOONNEGRO
+--- DISCORD SERVER LINK : discord.gg/SOONNEGRO (dont join on alts every alt will be banned this will be checked 24/7 either join on your main or dont fucking join, also people who look like alts will also be banned to keep immo and all his weird ass friends away from the server 😆)
 
 ---Hello, Me and iux will make Better tutorials soon. we will be making videos for it too just wait these tutorials were rushed cuz we didnt have alot time so if you dont understand something just dm me or iux on discord.
 
---- yes ik these tutorials are very ass but i honestly dont give a fuck either find it out yourself or if your lucky dme me on discord and i might help
+--- yes ik these tutorials are very ass but i honestly dont give a fuck either find it out yourself or if your lucky dm me on discord and i might help
 
 --- like i said this is not everything we're still gonna drop something in the next few days (we also will be making a discord server where we drop stuff daily)
 
@@ -18,7 +18,7 @@
 
 --- Scroll down for more infos.
 
---- everything i said here can be proofed which i also will be doing in the discord server so shut the fuck up.
+--- everything i said here can be proofed which i also will be doing in the discord server so shut the fuck up
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
