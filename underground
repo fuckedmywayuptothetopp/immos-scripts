@@ -2,6 +2,7 @@
 -- look for local main and change it to your main account that does the commands.
 -- figure the rest out yourself <3
 -- also search for "ImmortalityL4rd" and replace it with your user (i cba to do that)
+-- also this sucks cuz immo is ass at making stuff lmao
 
 if (game.Players.LocalPlayer.Name == "altusername") then
     setfpscap(60)
