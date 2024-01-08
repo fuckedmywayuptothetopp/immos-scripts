@@ -1,0 +1,19 @@
+-- Requirements :
+-- 1 Alt with the gun + ammo
+
+-- Execute this on the alt with the guns + ammo on not gonna say anything else cuz its simple
+-- This is 1:1 from immo so dont cry in my dms i did not change anything or add anything
+
+game:GetService("RunService"):BindToRenderStep("inf", 0, function()
+if game.Players.YOURACCOUNT.Backpack:FindfirstChild("[Revolver]") then
+game:GetService("ReplicatedStorage").MainEvent:FireServer("Reload", game.Players.YOURACCOUNT.Backpack["[Revolver]"])
+end
+if game.Players.YOURACCOUNT.Character:FindfirstChild("[Revolver]") then
+game:GetService("ReplicatedStorage").MainEvent:FireServer("Reload", game.Players.YOURACCOUNT.Backpack["[Revolver]"])
+end
+if game.Players.YOURACCOUNT.Backpack:FindfirstChild("[Double-Barrel SG]") then
+game:GetService("ReplicatedStorage").MainEvent:FireServer("Reload", game.Players.YOURACCOUNT.Backpack["[Double-Barrel SG]"])
+end
+if game.Players.YOURACCOUNT.Character:FindfirstChild("[Double-Barrel SG]") then
+game:GetService("ReplicatedStorage").MainEvent:FireServer("Reload", game.Players.YOURACCOUNT.Backpack["[Double-Barrel SG]"])
+end
