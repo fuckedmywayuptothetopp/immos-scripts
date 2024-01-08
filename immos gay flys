@@ -1,0 +1,579 @@
+assert(getrawmetatable)
+gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+old = gmt.__namecall
+gmt.__namecall =
+    newcclosure(
+        function(self, ...)
+        local args = {...}
+        if tostring(args[1]) == "BreathingHAMON" then
+            return
+        elseif tostring(args[1]) == "TeleportDetect" then
+            return
+        elseif tostring(args[1]) == "CHECKER_1" then
+            return
+        elseif tostring(args[1]) == "CHECKER" then
+            return
+        elseif tostring(args[1]) == "GUI_CHECK" then
+            return
+        elseif tostring(args[1]) == "OneMoreTime" then
+            return
+        elseif tostring(args[1]) == "checkingSPEED" then
+            return
+        elseif tostring(args[1]) == "BANREMOTE" then
+            return
+        elseif tostring(args[1]) == "PERMAIDBAN" then
+            return
+        elseif tostring(args[1]) == "KICKREMOTE" then
+            return
+        elseif tostring(args[1]) == "BR_KICKPC" then
+            return
+        end
+        return old(self, ...)
+        end)
+wait(1)
+
+local Char = game.Players.LocalPlayer.Character local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+game:GetService('RunService'):BindToRenderStep("n", 0 , function()
+for i,v in next, Hum:GetPlayingAnimationTracks() do
+if v.Animation.AnimationId == "rbxassetid://3619010834" then
+v:Stop()
+elseif v.Animation.AnimationId == "rbxassetid://5641749824" then
+v:Stop()
+end
+end
+end)
+
+--//-------------------------------------------------\\-- Glide Fly
+local FlyMode1 = "Glide" -- Glide, Shazam
+function Fly()
+        function sandbox(var,func)
+            local env = getfenv(func)
+            local newenv = setmetatable({},{
+                __index = function(self,k)
+                    if k=="script" then
+                        return var
+                    else
+                        return env[k]
+                    end
+                end,
+            })
+            setfenv(func,newenv)
+            return func
+        end
+        cors = {}
+        mas = Instance.new("Model",game:GetService("Lighting"))
+        Tool0 = Instance.new("Tool")
+        LocalScript1 = Instance.new("LocalScript")
+        Sound2 = Instance.new("Sound")
+        Sound3 = Instance.new("Sound")
+        Animation4 = Instance.new("Animation")
+        RemoteEvent5 = Instance.new("RemoteEvent")
+        Animation6 = Instance.new("Animation")
+        Tool0.Name = "Glide Fly"
+        Tool0.Parent = mas
+        Tool0.CanBeDropped = true
+        Tool0.RequiresHandle = false
+        LocalScript1.Name = "local"
+        LocalScript1.Parent = Tool0
+        table.insert(cors,sandbox(LocalScript1,function()
+            wait();
+            local l__LocalPlayer__1 = game.Players.LocalPlayer;
+            while true do
+                wait();
+                if l__LocalPlayer__1.Character then
+                    break;
+                end;
+            end;
+            local l__Character__2 = l__LocalPlayer__1.Character;
+            local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
+            local l__Parent__4 = script.Parent;
+            local u1 = false;
+            local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
+            local u3 = nil;
+            local u4 = nil;
+            local u5 = false;
+            local u6 = false;
+            local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
+            l__Parent__4.Equipped:connect(function(p1)
+                p1.TargetFilter = workspace;
+                u1 = true;
+                u2:Play();
+                u3 = Instance.new("BodyGyro");
+                u3.Name = "NA";
+                u3.Parent = l__Character__2.HumanoidRootPart;
+                u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                u3.P = u3.P * 5;
+                u3.CFrame = CFrame.new(0, 0, 0);
+                u4 = Instance.new("BodyPosition");
+                u4.Name = "NA";
+                u4.Parent = l__Character__2.HumanoidRootPart;
+                u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                u4.Position = l__Character__2.HumanoidRootPart.Position +  Vector3.new(0,8,0);
+                p1.Button1Down:connect(function()
+                    if u5 then
+                        return;
+                    end;
+                    u5 = true;
+                    u6 = true;
+                    u7:Play();
+                    local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
+                    v5.MaxForce = Vector3.new(50000, 50000, 50000);
+                    v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 145;
+                    u3.MaxTorque = Vector3.new(30000, 30000, 30000);
+                    u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                    u4.Parent = nil;
+                    l__Humanoid__3.AutoRotate = false;
+                    if u2.IsPlaying then
+                        u2:Stop();
+                    end;
+                    while u6 do
+                        v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 145;
+                        u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                        game:GetService("RunService").Heartbeat:wait();		
+                    end;
+                    l__Humanoid__3.AutoRotate = true;
+                    v5:Destroy();
+                    if u4 ~= nil then
+                        u4.Position = l__Character__2.HumanoidRootPart.Position;
+                        u4.Parent = l__Character__2.HumanoidRootPart;
+                    end;
+                    if u3 ~= nil then
+                        u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                        u3.CFrame = CFrame.new(0, 0, 0);
+                    end;
+                    u6 = false;
+                    if u1 then
+                        u2:Play();
+                    end;
+                    u7:Stop();
+                    wait(0.3);
+                    u5 = false;
+                end);
+                p1.Button1Up:connect(function()
+                    u6 = false;
+                end);
+            end);
+            l__Parent__4.Unequipped:connect(function()
+                u1 = false;
+                u6 = false;
+                u3:Destroy();
+                u3 = nil;
+                u4:Destroy();
+                u4 = nil;
+                if u2.IsPlaying then
+                    u2:Stop();
+                end;
+            end);
+        end))
+        Sound2.Name = "Flapping"
+        Sound2.Parent = LocalScript1
+        Sound2.Looped = true
+        Sound2.MaxDistance = 100
+        Sound2.Pitch = 1.5
+        Sound2.PlaybackSpeed = 1.5
+        Sound2.SoundId = "rbxassetid://1462718291"
+        Sound3.Name = "Activation"
+        Sound3.Parent = LocalScript1
+        Sound3.MaxDistance = 100
+        Sound3.SoundId = "rbxassetid://2952274135"
+        Sound3.Volume = 0.69999998807907
+        Animation4.Name = "Hover"
+        Animation4.Parent = LocalScript1
+        Animation4.AnimationId = "rbxassetid://3541114300"
+        RemoteEvent5.Name = "re"
+        RemoteEvent5.Parent = LocalScript1
+        Animation6.Name = "Fly"
+        Animation6.Parent = LocalScript1
+        if FlyMode1 == "Shazam" then
+        Animation6.AnimationId = "rbxassetid://3541044388"
+        elseif FlyMode1 == "Glide" then
+        Animation6.AnimationId = "rbxassetid://3084858603"
+        end
+        for i,v in pairs(mas:GetChildren()) do
+            v.Parent = game.Players.LocalPlayer.Backpack
+            pcall(function() v:MakeJoints() end)
+        end
+        mas:Destroy()
+        for i,v in pairs(cors) do
+            spawn(function()
+                pcall(v)
+            end)
+        end
+    end
+    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+    Fly()
+--//-------------------------------------------------\\-- Shazam Fly
+local FlyMode2 = "Shazam" -- Glide, Shazam
+function Fly()
+        function sandbox(var,func)
+            local env = getfenv(func)
+            local newenv = setmetatable({},{
+                __index = function(self,k)
+                    if k=="script" then
+                        return var
+                    else
+                        return env[k]
+                    end
+                end,
+            })
+            setfenv(func,newenv)
+            return func
+        end
+        cors = {}
+        mas = Instance.new("Model",game:GetService("Lighting"))
+        Tool0 = Instance.new("Tool")
+        LocalScript1 = Instance.new("LocalScript")
+        Sound2 = Instance.new("Sound")
+        Sound3 = Instance.new("Sound")
+        Animation4 = Instance.new("Animation")
+        RemoteEvent5 = Instance.new("RemoteEvent")
+        Animation6 = Instance.new("Animation")
+        Tool0.Name = "Shazam Fly"
+        Tool0.Parent = mas
+        Tool0.CanBeDropped = true
+        Tool0.RequiresHandle = false
+        LocalScript1.Name = "local"
+        LocalScript1.Parent = Tool0
+        table.insert(cors,sandbox(LocalScript1,function()
+            wait();
+            local l__LocalPlayer__1 = game.Players.LocalPlayer;
+            while true do
+                wait();
+                if l__LocalPlayer__1.Character then
+                    break;
+                end;
+            end;
+            local l__Character__2 = l__LocalPlayer__1.Character;
+            local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
+            local l__Parent__4 = script.Parent;
+            local u1 = false;
+            local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
+            local u3 = nil;
+            local u4 = nil;
+            local u5 = false;
+            local u6 = false;
+            local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
+            l__Parent__4.Equipped:connect(function(p1)
+                p1.TargetFilter = workspace;
+                u1 = true;
+                u2:Play();
+                u3 = Instance.new("BodyGyro");
+                u3.Name = "NA";
+                u3.Parent = l__Character__2.HumanoidRootPart;
+                u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                u3.P = u3.P * 5;
+                u3.CFrame = CFrame.new(0, 0, 0);
+                u4 = Instance.new("BodyPosition");
+                u4.Name = "NA";
+                u4.Parent = l__Character__2.HumanoidRootPart;
+                u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                u4.Position = l__Character__2.HumanoidRootPart.Position +  Vector3.new(0,8,0);
+                p1.Button1Down:connect(function()
+                    if u5 then
+                        return;
+                    end;
+                    u5 = true;
+                    u6 = true;
+                    u7:Play();
+                    local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
+                    v5.MaxForce = Vector3.new(50000, 50000, 50000);
+                    v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 145;
+                    u3.MaxTorque = Vector3.new(30000, 30000, 30000);
+                    u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                    u4.Parent = nil;
+                    l__Humanoid__3.AutoRotate = false;
+                    if u2.IsPlaying then
+                        u2:Stop();
+                    end;
+                    while u6 do
+                        v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 145;
+                        u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                        game:GetService("RunService").Heartbeat:wait();		
+                    end;
+                    l__Humanoid__3.AutoRotate = true;
+                    v5:Destroy();
+                    if u4 ~= nil then
+                        u4.Position = l__Character__2.HumanoidRootPart.Position;
+                        u4.Parent = l__Character__2.HumanoidRootPart;
+                    end;
+                    if u3 ~= nil then
+                        u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                        u3.CFrame = CFrame.new(0, 0, 0);
+                    end;
+                    u6 = false;
+                    if u1 then
+                        u2:Play();
+                    end;
+                    u7:Stop();
+                    wait(0.3);
+                    u5 = false;
+                end);
+                p1.Button1Up:connect(function()
+                    u6 = false;
+                end);
+            end);
+            l__Parent__4.Unequipped:connect(function()
+                u1 = false;
+                u6 = false;
+                u3:Destroy();
+                u3 = nil;
+                u4:Destroy();
+                u4 = nil;
+                if u2.IsPlaying then
+                    u2:Stop();
+                end;
+            end);
+        end))
+        Sound2.Name = "Flapping"
+        Sound2.Parent = LocalScript1
+        Sound2.Looped = true
+        Sound2.MaxDistance = 100
+        Sound2.Pitch = 1.5
+        Sound2.PlaybackSpeed = 1.5
+        Sound2.SoundId = "rbxassetid://1462718291"
+        Sound3.Name = "Activation"
+        Sound3.Parent = LocalScript1
+        Sound3.MaxDistance = 100
+        Sound3.SoundId = "rbxassetid://2952274135"
+        Sound3.Volume = 0.69999998807907
+        Animation4.Name = "Hover"
+        Animation4.Parent = LocalScript1
+        Animation4.AnimationId = "rbxassetid://3541114300"
+        RemoteEvent5.Name = "re"
+        RemoteEvent5.Parent = LocalScript1
+        Animation6.Name = "Fly"
+        Animation6.Parent = LocalScript1
+        if FlyMode2 == "Shazam" then
+        Animation6.AnimationId = "rbxassetid://3541044388"
+        elseif FlyMode2 == "Glide" then
+        Animation6.AnimationId = "rbxassetid://3084858603"
+        end
+        for i,v in pairs(mas:GetChildren()) do
+            v.Parent = game.Players.LocalPlayer.Backpack
+            pcall(function() v:MakeJoints() end)
+        end
+        mas:Destroy()
+        for i,v in pairs(cors) do
+            spawn(function()
+                pcall(v)
+            end)
+        end
+    end
+    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+    Fly()
+--//-------------------------------------------------\\-- Ghost Fly (made by me i just change the animation)
+local FlyMode3 = "Glide"
+	function Fly()
+        function sandbox(var,func)
+            local env = getfenv(func)
+            local newenv = setmetatable({},{
+                __index = function(self,k)
+                    if k=="script" then
+                        return var
+                    else
+                        return env[k]
+                    end
+                end,
+            })
+            setfenv(func,newenv)
+            return func
+        end
+        cors = {}
+        mas = Instance.new("Model",game:GetService("Lighting"))
+        Tool0 = Instance.new("Tool")
+        LocalScript1 = Instance.new("LocalScript")
+        Sound2 = Instance.new("Sound")
+        Sound3 = Instance.new("Sound")
+        Animation4 = Instance.new("Animation")
+        RemoteEvent5 = Instance.new("RemoteEvent")
+        Animation6 = Instance.new("Animation")
+        Tool0.Name = "Ghost Fly"
+        Tool0.Parent = mas
+        Tool0.CanBeDropped = true
+        Tool0.RequiresHandle = false
+        LocalScript1.Name = "local"
+        LocalScript1.Parent = Tool0
+        table.insert(cors,sandbox(LocalScript1,function()
+            wait();
+            local l__LocalPlayer__1 = game.Players.LocalPlayer;
+            while true do
+                wait();
+                if l__LocalPlayer__1.Character then
+                    break;
+                end;
+            end;
+            local l__Character__2 = l__LocalPlayer__1.Character;
+            local l__Humanoid__3 = l__Character__2:WaitForChild("Humanoid");
+            local l__Parent__4 = script.Parent;
+            local u1 = false;
+            local u2 = l__Humanoid__3:LoadAnimation(script.Hover);
+            local u3 = nil;
+            local u4 = nil;
+            local u5 = false;
+            local u6 = false;
+            local u7 = l__Humanoid__3:LoadAnimation(script.Fly);
+            l__Parent__4.Equipped:connect(function(p1)
+            game:GetService('RunService'):BindToRenderStep("n", 0 , function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+            game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+            game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+            end)
+                p1.TargetFilter = workspace;
+                u1 = true;
+                u2:Play();
+                u3 = Instance.new("BodyGyro");
+                u3.Name = "NA";
+                u3.Parent = l__Character__2.HumanoidRootPart;
+                u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                u3.P = u3.P * 5;
+                u3.CFrame = CFrame.new(0, 0, 0);
+                u4 = Instance.new("BodyPosition");
+                u4.Name = "NA";
+                u4.Parent = l__Character__2.HumanoidRootPart;
+                u4.MaxForce = Vector3.new(60000, 60000, 60000);
+                u4.Position = l__Character__2.HumanoidRootPart.Position +  Vector3.new(0,4,0);
+                p1.Button1Down:connect(function()
+                    if u5 then
+                        return;
+                    end;
+                    u5 = true;
+                    u6 = true;
+                    u7:Play();
+                    local v5 = Instance.new("BodyVelocity", l__Character__2.HumanoidRootPart);
+                    v5.MaxForce = Vector3.new(50000, 50000, 50000);
+                    v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 40;
+                    u3.MaxTorque = Vector3.new(30000, 30000, 30000);
+                    u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                    u4.Parent = nil;
+                    l__Humanoid__3.AutoRotate = false;
+                    if u2.IsPlaying then
+                    ------------
+                    end;
+                    while u6 do
+                        v5.Velocity = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p).lookVector * 40;
+                        u3.CFrame = CFrame.new(l__Character__2.HumanoidRootPart.CFrame.p, p1.Hit.p);
+                        game:GetService("RunService").Heartbeat:wait();		
+                    end;
+                    l__Humanoid__3.AutoRotate = true;
+                    v5:Destroy();
+                    if u4 ~= nil then
+                        u4.Position = l__Character__2.HumanoidRootPart.Position;
+                        u4.Parent = l__Character__2.HumanoidRootPart;
+                    end;
+                    if u3 ~= nil then
+                        u3.MaxTorque = Vector3.new(30000, 0, 30000);
+                        u3.CFrame = CFrame.new(0, 0, 0);
+                    end;
+                    u6 = false;
+                    if u1 then
+                        u2:Play();
+                    end;
+                    u7:Stop();
+                    wait(0.3);
+                    u5 = false;
+                end);
+                p1.Button1Up:connect(function()
+                    u6 = false;
+                end);
+            end);
+            l__Parent__4.Unequipped:connect(function()
+            game:GetService('RunService'):UnbindFromRenderStep("n")
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+            game.Players.LocalPlayer.Character.UpperTorso.CanCollide = true
+            game.Players.LocalPlayer.Character.LowerTorso.CanCollide = true
+                u1 = false;
+                u6 = false;
+                u3:Destroy();
+                u3 = nil;
+                u4:Destroy();
+                u4 = nil;
+                if u2.IsPlaying then
+                    u2:Stop();
+                end;
+            end);
+        end))
+        Sound2.Name = "Flapping"
+        Sound2.Parent = LocalScript1
+        Sound2.Looped = true
+        Sound2.MaxDistance = 100
+        Sound2.Pitch = 1.5
+        Sound2.PlaybackSpeed = 1.5
+        Sound2.SoundId = "rbxassetid://1462718291"
+        Sound3.Name = "Activation"
+        Sound3.Parent = LocalScript1
+        Sound3.MaxDistance = 100
+        Sound3.SoundId = "rbxassetid://2952274135"
+        Sound3.Volume = 0.69999998807907
+        Animation4.Name = "Hover"
+        Animation4.Parent = LocalScript1
+        Animation4.AnimationId = "rbxassetid://3541114300"
+        RemoteEvent5.Name = "re"
+        RemoteEvent5.Parent = LocalScript1
+        Animation6.Name = "Fly"
+        Animation6.Parent = LocalScript1
+        if FlyMode3 == "Shazam" then
+        Animation6.AnimationId = "rbxassetid://3541044388"
+        elseif FlyMode3 == "Glide" then
+        Animation6.AnimationId = "rbxassetid://3084858603"
+        end
+        for i,v in pairs(mas:GetChildren()) do
+            v.Parent = game.Players.LocalPlayer.Backpack
+            pcall(function() v:MakeJoints() end)
+        end
+        mas:Destroy()
+        for i,v in pairs(cors) do
+            spawn(function()
+                pcall(v)
+            end)
+        end
+    end
+    game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+    Fly()
+--//-------------------------------------------------\\-- End    
+        local outfit = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+        outfit.Name = "Batman Glide"
+        outfit.RequiresHandle = false
+        local player = game.Players.LocalPlayer
+        while true do
+            wait()
+            if player.Character then
+                break
+            end
+        end
+        local Animation = Instance.new("Animation")
+        Animation.AnimationId = "rbxassetid://3084858603"
+        local char = player.Character
+        local Humanoid = char:WaitForChild("Humanoid")
+        local tool = outfit
+        local u1 = false
+        local u3 = false
+        local u4 = Humanoid:LoadAnimation(Animation)
+        tool.Equipped:connect(function(p1)
+            p1.Button1Down:connect(function()
+                if u1 or Humanoid.FloorMaterial ~= Enum.Material.Air then
+                    return
+                end
+                u1 = true
+                u3 = true
+                u4:Play()
+                local v5 = Instance.new("BodyVelocity", char.HumanoidRootPart)
+                v5.MaxForce = Vector3.new(50000, 50000, 50000)
+                v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
+                while u3 and Humanoid.FloorMaterial == Enum.Material.Air do
+                    v5.Velocity = (char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(-18), 0, 0)).lookVector * 40
+                    game:GetService("RunService").Heartbeat:wait()
+                end
+                v5:Destroy()
+                u3 = false
+                u4:Stop()
+                wait(0.3)
+                u1 = false
+            end)
+            p1.Button1Up:connect(function()
+                u3 = false
+            end)
+        end)
+        tool.Unequipped:connect(function()
+            u3 = false
+end)
