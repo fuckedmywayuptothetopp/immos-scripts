@@ -1,0 +1,61 @@
+-- if you turned on godmode the cam is gonna be very ass just delete "GRABBING_CONSTRAINT" from your char and it will fix it 😎
+Ass tutorial for npc's.
+
+(you need 2 accounts to use this)
+
+1. Step : Goto Bull
+
+2. Step : get your alt and knock it with your main and drag it at the head
+
+3. Step : basically remove your alts arm by executing this (execute it on the account ur dragging your acc with)
+
+    local args = {
+        [1] = "Grabbing",
+        [2] = true
+    }
+ 
+    game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer(unpack(args))
+
+task.wait(0.1)
+
+
+local Alt = "ALTSUSERNAME"
+
+game.Players[Alt].Character.RightUpperArm.Position = Vector3.new(0,-1200,0)
+
+4. Step : after you've done it sit down with your main on the Bull and execute this on your alt (after your alt isnt knocked anymore)
+
+
+if game.Players.LocalPlayer.Name == "altaccountyouremovedarmfrom" then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.accountyouwantgodmodeon.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-2)
+    local person = "accountyouwantgodmodeon"
+    game.Players[person].Character.BodyEffects["K.O"]:GetPropertyChangedSignal("Value"):Wait()
+    if game.Players[person].Character:FindFirstChild("GRABBING_CONSTRAINT") then
+    else
+    wait(0.3)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players[person].Character.UpperTorso.Position.X,game.Players[person].Character.UpperTorso.Position.Y,game.Players[person].Character.UpperTorso.Position.Z) * CFrame.new(0,1,0)
+    task.wait(0.2)
+    local args = {
+        [1] = "Grabbing",
+        [2] = true
+    }
+ 
+    game:GetService("ReplicatedStorage"):WaitForChild("MainEvent"):FireServer(unpack(args))
+    end
+    wait(0.7)
+    if game.Players[person].Character:FindFirstChild("GRABBING_CONSTRAINT") then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, -499, 0)
+    end
+    end
+
+After you have executed it on your alt basically do nothing on your accounts just wait till it drops you off the bull
+after it drops you off the bull the alt is basically gonna tp on you and carry you to give you "GRABBING_CONSTRAINT" (the "godmode/antiknock")
+
+After all that happend try to use tools and if you cant use any tools you got godmode. 
+
+If it didnt work the first try basically re-execute the carry script and sit on bull again till it works :D
+
+VERY EASY
+
+this is an very ass tutorial for retards like faisal. If you need any help dm on discord : fuckedmywayuptothetopp i might help
+
