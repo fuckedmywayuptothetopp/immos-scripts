@@ -1,0 +1,298 @@
+-- these tools are not 1:1 since theyre remakes.
+-- FIXED ANIM FROM COD NOT PLAYING, Velocity too high
+
+function Ringtone(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+    function Stop()
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+    function Change(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+    function Call()
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+    -- Ringtone(ID)
+    -- Stop()
+    -- Change(ID)
+    -- Call()
+    function AddVelocity(Vel, Char)
+        Char.HumanoidRootPart.Velocity = Char.HumanoidRootPart.Velocity+Vel
+    end
+
+--//------------------------------------------------------------------------------------------\\--
+   OWNER = game:GetService("Players").LocalPlayer
+   RS = game:GetService("RunService")
+   TS = game:GetService("TweenService")
+   ANIM = OWNER.Character:WaitForChild("Animate")
+--//------------------------------------------------------------------------------------------\\--
+   function AnimPlay(ID, SPEED)
+       local animation = Instance.new('Animation', game:GetService("Workspace"))
+       animation.AnimationId = 'rbxassetid://'..ID
+       playing = OWNER.Character:WaitForChild("Humanoid"):LoadAnimation(animation)
+       playing:Play() 
+           if tonumber(SPEED) then
+               playing:AdjustSpeed(SPEED)
+           else
+               playing:AdjustSpeed(1)
+           end
+       animation:Destroy()
+   end
+--//------------------------------------------------------------------------------------------\\--
+   function AnimStop(ID, SPEED)
+       for i,v in pairs(OWNER.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do
+           if v.Animation.AnimationId == 'rbxassetid://'..ID then
+             if tonumber(SPEED) then
+                   v:Stop(SPEED)
+               else
+                   v:Stop()
+               end
+           end
+       end
+   end
+
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+    local OldChar = LocalPlayer.Character
+
+    getgenv().Bell = false
+    game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Bell == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (1200)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "[Taco Bell Bong]"
+    Tool.Activated:Connect(function()
+    game.Players.LocalPlayer.Backpack["[Bat]"].Parent = game.Players.LocalPlayer.Character
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://3172948973"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    wait(1)
+    getgenv().Bell = true
+    wait(0.1)
+    Ringtone(8243331779)
+    wait(1)
+    getgenv().Bell = false
+    wait(2.1)
+    game.Players.LocalPlayer.Character["[Bat]"].Parent = game.Players.LocalPlayer.Backpack
+    end)
+
+
+    getgenv().Uppercut = false
+    game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Uppercut == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (1200)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "Uppercut"
+    Tool.Activated:Connect(function()
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://3355740058"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    getgenv().Uppercut = true
+    wait(0.1)
+    Ringtone(6543434995)
+    wait(1)
+    getgenv().Uppercut = false
+    end)
+
+getgenv().Kick = false
+    game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Kick == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (1200)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "[Kick]"
+    Tool.Activated:Connect(function()
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://2788306916"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    wait(0.1)
+    getgenv().Kick = true
+    wait(0.1)
+    Ringtone(4766119678)
+    wait(1)
+    getgenv().Kick = false
+    wait(0.1)
+    end)
+
+    getgenv().Punch = false
+    game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Punch == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (1200)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "[Punch]"
+    Tool.Activated:Connect(function()
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://3354696735"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    getgenv().Punch = true
+    wait(0.1)
+    Ringtone(8907573127)
+    wait(1)
+    getgenv().Punch = false
+    end)
+
+    getgenv().Thunder = false
+    game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Thunder == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (1200)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "Thunder"
+    Tool.Activated:Connect(function()
+    local Animation = Instance.new("Animation")
+    Animation.AnimationId = "rbxassetid://14496531574"
+    local LoadAnimation = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(Animation)
+    LoadAnimation.Looped = false
+    LoadAnimation.Priority = Enum.AnimationPriority.Action
+    LoadAnimation:Play()
+    getgenv().Thunder = true
+    wait(0.1)
+    Ringtone(1079408535)
+    wait(1)
+    getgenv().Thunder = false
+    end)
+
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Tool = Instance.new("Tool",LocalPlayer.Backpack)
+    local Mouse = LocalPlayer:GetMouse()
+    local OriginalKeyUpValue = 0
+    Tool.RequiresHandle = false 
+    Tool.Name = "[COD ZOMBIE]"
+    Tool.Activated:Connect(function()
+    Ringtone(4968749619)
+    AnimPlay(2788838708)
+    wait(3.7)
+    AnimStop(2788838708)
+    end)
