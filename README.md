@@ -46,6 +46,6 @@ Disclaimer : Basically Stop being a bitch and be normal for once and stop trusti
 Also im not gonna leak any names of the people that gave me these scripts cuz i aint no snitch like most of immos friends also pls stop being gay (seriously you're cringe as fuck)
 (ALSO PLEASE DONT TRUST THIS GUY WITH ANYTHING HE LEGIT SENT ME SOMEONES FACE  HILE THE PERSON LEGIT TRUSTED HIM WITH IT HE ALSO TALKS BAD BEHIND EVERYONES BACK... No im not lying this is the truth.)
 
-Also i do not take any response of yalls account if you get banned by using any of this stuff just make sure you're not an ed and got anticheat bypass executed.
+Also i do not take any responsibility of yalls account if you get banned by using any of this stuff just make sure you're not an ed and got anticheat bypass executed.
 
 
