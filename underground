@@ -1,0 +1,348 @@
+-- change "altusername" to your alts account that should do the stuff
+-- look for local main and change it to your main account that does the commands.
+-- figure the rest out yourself <3
+-- also search for "ImmortalityL4rd" and replace it with your user (i cba to do that)
+
+if (game.Players.LocalPlayer.Name == "altusername") then
+    setfpscap(60)
+	pcall(function()
+		print("Ok");
+		local vu = game:GetService("VirtualUser");
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+			vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame);
+			wait(1);
+			vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame);
+		end);
+		assert(getrawmetatable);
+		gmt = getrawmetatable(game);
+		setreadonly(gmt, false);
+		old = gmt.__namecall;
+		gmt.__namecall = newcclosure(function(self, ...)
+			local args = {...};
+			if (tostring(args[1]) == "BreathingHAMON") then
+				return;
+			elseif (tostring(args[1]) == "TeleportDetect") then
+				return;
+			elseif (tostring(args[1]) == "CHECKER_1") then
+				return;
+			elseif (tostring(args[1]) == "CHECKER") then
+				return;
+			elseif (tostring(args[1]) == "GUI_CHECK") then
+				return;
+			elseif (tostring(args[1]) == "OneMoreTime") then
+				return;
+			elseif (tostring(args[1]) == "checkingSPEED") then
+				return;
+			elseif (tostring(args[1]) == "BANREMOTE") then
+				return;
+			elseif (tostring(args[1]) == "PERMAIDBAN") then
+				return;
+			elseif (tostring(args[1]) == "KICKREMOTE") then
+				return;
+			elseif (tostring(args[1]) == "BR_KICKPC") then
+				return;
+			end
+			return old(self, ...);
+		end);
+		local P_4 = Instance.new("Part");
+		P_4.Name = "Rel";
+		P_4.Parent = game.workspace;
+		P_4.Anchored = true;
+		P_4.Size = Vector3.new(100, 5, 100);
+		P_4.CFrame = CFrame.new(0, 2000, 0);
+		local MainAccount = "mainaccount";
+		game.Players[MainAccount].Chatted:Connect(function(msg)
+			if (msg:lower() == "/e g") then
+				game:GetService("RunService"):BindToRenderStep("TELEPORT", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(108.681839, -26.7500305, -272.597198, -0.981091559, -1.9960247e-8, -0.19354406, -1.5902334e-8, 1, -2.2519941e-8, 0.19354406, -1.9016323e-8, -0.981091559);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+				wait(0.3);
+				fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Grenade] - $721"].ClickDetector);
+				wait(0.2);
+				game:GetService("RunService"):UnbindFromRenderStep("TELEPORT");
+				wait(0.2);
+				game:GetService("RunService"):BindToRenderStep("TELEPORT", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.97934, -74.2000885, 108.754417, 0.999034166, -2.6976723e-8, -0.0439406224, 2.750697e-8, 1, 1.1462693e-8, 0.0439406224, -1.2660295e-8, 0.999034166);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+				game.Players.LocalPlayer.Backpack["[Grenade]"].Parent = game.Players.LocalPlayer.Character;
+				wait(0.6);
+				game.Players.LocalPlayer.Character["[Grenade]"]:Activate();
+				wait(0.6);
+				game.Players.LocalPlayer.Character["[Grenade]"]:Activate();
+				c = game:GetService("RunService").Heartbeat:Connect(function()
+					if game:GetService("Workspace").Ignored:FindFirstChild("Handle") then
+						game:GetService("Workspace").Ignored.Handle.Velocity = Vector3.new(0, 27, 0);
+					end
+				end);
+				game:GetService("RunService"):BindToRenderStep("TpG", 0, function()
+					if game:GetService("Workspace").Ignored:FindFirstChild("Handle") then
+						game:GetService("Workspace").Ignored.Handle.CanCollide = false;
+						game:GetService("Workspace").Ignored.Handle.Position = game.Players[MainAccount].Character.UpperTorso.Position + (game.Players[MainAccount].Character.Humanoid.MoveDirection * 15);
+					end
+				end);
+				wait(4);
+				game:GetService("RunService"):UnbindFromRenderStep("TELEPORT");
+				wait(0.1);
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);
+				game:GetService("RunService"):UnbindFromRenderStep("TpG");
+				c:Disconnect();
+			elseif (msg:lower() == "/e l1") then
+				wait(0.1);
+				game:GetService("Workspace").FallenPartsDestroyHeight = math.huge - math.huge;
+				setfflag("HumanoidParallelRemoveNoPhysics", "False");
+				setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False");
+				game:GetService("RunService"):BindToRenderStep("Noclip", 0, function()
+					game.Players.LocalPlayer.Character.Humanoid:ChangeState(11);
+				end);
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Ignored.Shop["[Flashlight] - $10"].Head.CFrame * CFrame.new(0,2,0)
+				wait(0.9);
+				fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Flashlight] - $10"].ClickDetector);
+				wait(0.7);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].Parent = game:GetService("Players").LocalPlayer.Character;
+				wait(0.9);
+				fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Flashlight] - $10"].ClickDetector);
+				game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+				wait(0.2);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].Name = "[Flashlight1]";
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight1]"].GripPos = Vector3.new(1.15, -1.7, 2);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight1]"].GripUp = Vector3.new(0, 0, -1);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].GripPos = Vector3.new(1.15, -1.7, 2);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].GripUp = Vector3.new(0, 0, -1);
+				wait(0.2);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].Parent = game:GetService("Players").LocalPlayer.Character;
+				wait(0.5);
+				game:GetService("Players").LocalPlayer.Character["[Flashlight]"]:Activate();
+				wait(0.3);
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight1]"].Parent = game:GetService("Players").LocalPlayer.Character;
+				wait(0.5);
+				game:GetService("Players").LocalPlayer.Character["[Flashlight1]"]:Activate();
+				wait(0.3);
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame * CFrame.new(0, -80, 0);
+				game.workspace.MAP.Map:Destroy();
+				game.workspace.MAP.CarnivalPlace:Destroy();
+				game.workspace.MAP.Graffiti:Destroy();
+				game.workspace.MAP.Indestructible:Destroy();
+				wait(1);
+				game:GetService("RunService"):BindToRenderStep("light", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[MainAccount].Character.HumanoidRootPart.CFrame * CFrame.new(0, -10, 0);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+			elseif (msg:lower() == "/e l2") then
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight]"].Parent = game:GetService("Players").LocalPlayer.Character;
+				game:GetService("Players").LocalPlayer.Backpack["[Flashlight1]"].Parent = game:GetService("Players").LocalPlayer.Character;
+				wait(0.5);
+				game:GetService("RunService"):BindToRenderStep("light", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[MainAccount].Character.HumanoidRootPart.CFrame * CFrame.new(0, -10, 0);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+			elseif (msg:lower() == "/e l3") then
+				game.Players.LocalPlayer.Character.Humanoid:UnequipTools();
+				game:GetService("RunService"):UnbindFromRenderStep("light");
+				wait(0.1);
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);
+			elseif (msg:lower() == "/e l4") then
+				game:GetService("RunService"):UnbindFromRenderStep("light");
+				wait(0.2);
+				game:GetService("RunService"):BindToRenderStep("light", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[MainAccount].Character.HumanoidRootPart.CFrame * CFrame.new(0, -15, 0);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+			elseif (msg:lower() == "/e l5") then
+				game:GetService("RunService"):UnbindFromRenderStep("light");
+				wait(0.2);
+				game:GetService("RunService"):BindToRenderStep("light", 0, function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[MainAccount].Character.HumanoidRootPart.CFrame * CFrame.new(0, -10, 0);
+					game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+				end);
+
+            elseif (msg:lower() == "/e a") then
+if game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]") then
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-225.856354, 21.740221, -77.2130737, 0.999822319, 1.08228349e-07, 0.0188493319, -1.07573136e-07, 1, -3.57744554e-08, -0.0188493319, 3.37404202e-08, 0.999822319)
+wait(0.5)
+fireclickdetector(workspace.Ignored.Shop["[StopSign] - $309"].ClickDetector)
+end
+game.Players.LocalPlayer.Backpack:WaitForChild("[StopSign]")
+game.Players.LocalPlayer.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2000009, 0);
+game.Players.LocalPlayer.Backpack["[StopSign]"].Parent = game.Players.LocalPlayer.Character
+wait(0.4)
+game.Players.LocalPlayer.Character["[StopSign]"]:Activate()
+setfpscap(60)
+game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
+for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+v:Stop();
+end
+game.Players.LocalPlayer.Character.Humanoid.Sit = true
+game.Players.LocalPlayer.Character.RightUpperArm.CanCollide = false
+game.Players.LocalPlayer.Character.RightLowerArm.CanCollide = false
+game.Players.LocalPlayer.Character.RightHand.CanCollide = false
+game.Players.LocalPlayer.Character.LeftUpperArm.CanCollide = false
+game.Players.LocalPlayer.Character.LeftLowerArm.CanCollide = false
+game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
+game.Players.LocalPlayer.Character.RightUpperLeg.CanCollide = false
+game.Players.LocalPlayer.Character.RightLowerLeg.CanCollide = false
+game.Players.LocalPlayer.Character.RightFoot.CanCollide = false
+game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+game.Players.LocalPlayer.Character.LeftLowerLeg.CanCollide = false
+game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end)
+wait(0.6)
+game:GetService("RunService"):BindToRenderStep("Tp", 0, function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.001,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame * CFrame.new(0, -4, -3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(-55,0,0)
+end)
+wait(1)
+game.Players.LocalPlayer.Character["[StopSign]"].Parent = game.Players.LocalPlayer.Backpack
+game:GetService("RunService"):UnbindFromRenderStep("Tp")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame * CFrame.new(0, -40, 0)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 99999999, 0);
+game:GetService("RunService"):UnbindFromRenderStep("CCC")
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = true
+game.Players.LocalPlayer.Character.Head.CanCollide = true
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+wait(0.4)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);       
+elseif (msg:lower() == "/e a2") then
+
+if game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]") then
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-225.856354, 21.740221, -77.2130737, 0.999822319, 1.08228349e-07, 0.0188493319, -1.07573136e-07, 1, -3.57744554e-08, -0.0188493319, 3.37404202e-08, 0.999822319)
+wait(0.5)
+fireclickdetector(workspace.Ignored.Shop["[StopSign] - $309"].ClickDetector)
+end
+game.Players.LocalPlayer.Backpack:WaitForChild("[StopSign]")
+game.Players.LocalPlayer.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2000009, 0);
+game.Players.LocalPlayer.Backpack["[StopSign]"].Parent = game.Players.LocalPlayer.Character
+wait(0.4)
+spawn(function()
+game.Players.LocalPlayer.Character["[StopSign]"]:Activate()
+wait(0.1)
+game.Players.LocalPlayer.Character["[StopSign]"]:Deactivate()
+end)
+setfpscap(60)
+game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
+for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+v:Stop();
+end
+game.Players.LocalPlayer.Character.Humanoid.Sit = true
+game.Players.LocalPlayer.Character.RightUpperArm.CanCollide = false
+game.Players.LocalPlayer.Character.RightLowerArm.CanCollide = false
+game.Players.LocalPlayer.Character.RightHand.CanCollide = false
+game.Players.LocalPlayer.Character.LeftUpperArm.CanCollide = false
+game.Players.LocalPlayer.Character.LeftLowerArm.CanCollide = false
+game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
+game.Players.LocalPlayer.Character.RightUpperLeg.CanCollide = false
+game.Players.LocalPlayer.Character.RightLowerLeg.CanCollide = false
+game.Players.LocalPlayer.Character.RightFoot.CanCollide = false
+game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+game.Players.LocalPlayer.Character.LeftLowerLeg.CanCollide = false
+game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end)
+wait(0.1)
+game:GetService("RunService"):BindToRenderStep("Tp", 0, function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.001,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame * CFrame.new(0, -4, -3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(-55,0,0)
+end)
+wait(0.7)
+game.Players.LocalPlayer.Character["[StopSign]"].Parent = game.Players.LocalPlayer.Backpack
+game:GetService("RunService"):UnbindFromRenderStep("Tp")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame * CFrame.new(0, -40, 0)
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 99999999, 0);
+game:GetService("RunService"):UnbindFromRenderStep("CCC")
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = true
+game.Players.LocalPlayer.Character.Head.CanCollide = true
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+game.Players.LocalPlayer.Character.Humanoid.Sit = false
+wait(0.4)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0); 
+
+
+elseif (msg:lower() == "/e g2") then
+setfpscap(60)
+game:GetService("RunService"):BindToRenderStep("TELEPORT", 0, function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(108.681839, -26.7500305, -272.597198, -0.981091559, -1.9960247e-8, -0.19354406, -1.5902334e-8, 1, -2.2519941e-8, 0.19354406, -1.9016323e-8, -0.981091559);
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+end);
+wait(0.3);
+fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Grenade] - $721"].ClickDetector);
+wait(0.2);
+game:GetService("RunService"):UnbindFromRenderStep("TELEPORT");
+wait(0.2);
+game:GetService("RunService"):BindToRenderStep("TELEPORT", 0, function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.97934, -74.2000885, 108.754417, 0.999034166, -2.6976723e-8, -0.0439406224, 2.750697e-8, 1, 1.1462693e-8, 0.0439406224, -1.2660295e-8, 0.999034166);
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0);
+end);
+game.Players.LocalPlayer.Backpack["[Grenade]"].Parent = game.Players.LocalPlayer.Character;
+wait(0.6);
+game.Players.LocalPlayer.Character["[Grenade]"]:Activate();
+wait(0.6);
+game.Players.LocalPlayer.Character["[Grenade]"]:Activate();
+c = game:GetService("RunService").Heartbeat:Connect(function()
+if game:GetService("Workspace").Ignored:FindFirstChild("Handle") then
+game:GetService("Workspace").Ignored.Handle.Velocity = Vector3.new(0, 25.01, 0);
+end
+end);
+game:GetService("RunService"):BindToRenderStep("TpG", 0, function()
+if game:GetService("Workspace").Ignored:FindFirstChild("Handle") then
+game:GetService("Workspace").Ignored.Handle.Position = game.Players.ImmortalityL4rd.Character.UpperTorso.Position + Vector3.new(0,0,-3)
+end
+end);
+wait(0.6)
+game:GetService("RunService"):UnbindFromRenderStep("TpG")
+c:Disconnect();
+game:GetService("Workspace").Ignored.Handle.Velocity = Vector3.new(game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame.LookVector.X*120,50,game.Players.ImmortalityL4rd.Character.HumanoidRootPart.CFrame.LookVector.Z*120)
+wait(1);
+game:GetService("RunService"):UnbindFromRenderStep("TELEPORT");
+wait(0.1);
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);
+wait(0.4)
+setfpscap(10)
+
+end
+end);
+		wait(1);
+		game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR");
+		wait(0.5);
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-225.856354, 21.740221, -77.2130737, 0.999822319, 1.08228349e-07, 0.0188493319, -1.07573136e-07, 1, -3.57744554e-08, -0.0188493319, 3.37404202e-08, 0.999822319)
+        wait(0.5)
+        fireclickdetector(workspace.Ignored.Shop["[StopSign] - $309"].ClickDetector)
+        wait(0.5)
+		Game:GetService("StarterPlayer")['AllowCustomAnimations'] = true;
+		for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+			v:Stop();
+		end
+		game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://1";
+		wait(1);
+		game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://2";
+		game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://1";
+		game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId = "rbxassetid://1";
+		setfpscap(10);
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);
+	end);
+end
