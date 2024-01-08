@@ -1,0 +1,198 @@
+spawn(function()
+local Main = "YOURMAINUSERNAME"
+getgenv().Prediction = 12.5
+if game.Players.LocalPlayer.Name == Main then
+print("MAIN")
+local function GetClosestToCursor()
+local Target
+local MinDistance = math.huge
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 then
+if v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("UpperTorso") and v.Character:FindFirstChild("LowerTorso") then
+local TargetPosition,OnScreen = game:GetService("Workspace").CurrentCamera:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+local Mag = (Vector2.new(TargetPosition.X, TargetPosition.Y) - Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y)).magnitude
+if Mag < MinDistance and OnScreen then
+Target = v
+MinDistance = Mag
+end
+end
+end
+end
+return Target
+end
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Kill") then
+elseif game.Players.LocalPlayer.Name == "YOURALTSUSERNAME" then
+local Tool = Instance.new("Tool",game:GetService("Players").LocalPlayer.Backpack)
+Tool.RequiresHandle = false
+Tool.Name = "Kill"
+Tool.CanBeDropped = false
+Tool.Activated:Connect(function()
+game.Players:Chat("kill! "..GetClosestToCursor().Name)
+end)
+end
+else
+game.Players.LocalPlayer.CharacterAdded:connect(function()
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 2009, 0);
+end)
+print("ALT")
+local function GetPlayer(String)
+local plr
+local strl = String:lower()
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+if v.Name:lower():sub(1, #String) == String:lower() or v.DisplayName:lower():sub(1, #String) == String:lower() then
+plr = v
+end 
+end
+if String == "" or String == " " then
+plr = nil
+end
+return plr
+end
+spawn(function()
+game.Players[Main].Chatted:Connect(function(msg1)
+local msg = string.split(msg1," ")
+if msg[1]:lower() == "kill!" then
+if msg[2] then
+local User = GetPlayer(msg[2])
+if game.workspace:FindFirstChild("Rel") then
+else
+local P_4 = Instance.new("Part");
+P_4.Name = "Rel";
+P_4.Parent = game.workspace;
+P_4.Anchored = true;
+P_4.Size = Vector3.new(100, 5, 100);
+P_4.CFrame = CFrame.new(0, 2000, 0);
+end
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+if workspace.Vehicles:FindFirstChild(game.Players.LocalPlayer.Name .."BIKE") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].VehicleSeat.CFrame * CFrame.new(0,0.8,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Ignored.Shop["[DuoBike] - $77"].Head.CFrame
+wait(0.4)
+fireclickdetector(game:GetService("Workspace").Ignored.Shop["[DuoBike] - $77"].ClickDetector);
+wait(0.3)
+for i = 1,300 do
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+wait(0.003)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].VehicleSeat.CFrame * CFrame.new(0,0.8,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+else
+break
+end
+end
+end
+end
+game:GetService("RunService"):BindToRenderStep("Bring", 0, function()
+if workspace.Vehicles:FindFirstChild(game.Players.LocalPlayer.Name .."BIKE") then
+if workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"]:FindFirstChild("Wheel") then
+workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].Wheel:Destroy()
+end
+end
+wait(0.001)
+if User.Character.Humanoid.Sit == false then
+if User.Character.Humanoid.MoveDirection == Vector3.new(0,0,0) then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = User.Character.HumanoidRootPart.CFrame * CFrame.new(0,-0.6,-2.4)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = User.Character.HumanoidRootPart.CFrame + User.Character.Humanoid.MoveDirection * getgenv().Prediction
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.2,0)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,60000000,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.2,0)
+end
+end)
+for i = 1,400 do
+wait(0.01)
+if User.Character.Humanoid.Sit == true then
+game:GetService("RunService"):UnbindFromRenderStep("Bring")
+wait(0.01)
+if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(900000000,-499,0)
+end
+end
+end
+end
+end
+end)
+end)
+spawn(function()
+game.Players[Main].Chatted:Connect(function(msg1)
+local msg = string.split(msg1," ")
+if msg[1]:lower() == "bring!" then
+if msg[2] then
+local User = GetPlayer(msg[2])
+if game.workspace:FindFirstChild("Rel") then
+else
+local P_4 = Instance.new("Part");
+P_4.Name = "Rel";
+P_4.Parent = game.workspace;
+P_4.Anchored = true;
+P_4.Size = Vector3.new(100, 5, 100);
+P_4.CFrame = CFrame.new(0, 2000, 0);
+end
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+if workspace.Vehicles:FindFirstChild(game.Players.LocalPlayer.Name .."BIKE") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].VehicleSeat.CFrame * CFrame.new(0,0.8,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Ignored.Shop["[DuoBike] - $77"].Head.CFrame
+wait(0.4)
+fireclickdetector(game:GetService("Workspace").Ignored.Shop["[DuoBike] - $77"].ClickDetector);
+wait(0.3)
+for i = 1,300 do
+if game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+wait(0.003)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].VehicleSeat.CFrame * CFrame.new(0,0.8,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+else
+break
+end
+end
+end
+end
+game:GetService("RunService"):BindToRenderStep("Bring", 0, function()
+if workspace.Vehicles:FindFirstChild(game.Players.LocalPlayer.Name .."BIKE") then
+if workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"]:FindFirstChild("Wheel") then
+workspace.Vehicles[game.Players.LocalPlayer.Name .."BIKE"].Wheel:Destroy()
+end
+end
+wait(0.001)
+if User.Character.Humanoid.Sit == false then
+if User.Character.Humanoid.MoveDirection == Vector3.new(0,0,0) then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = User.Character.HumanoidRootPart.CFrame * CFrame.new(0,-0.6,-2.4)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = User.Character.HumanoidRootPart.CFrame + User.Character.Humanoid.MoveDirection * getgenv().Prediction
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.2,0)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,60000000,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0.2,0)
+end
+end)
+for i = 1,400 do
+wait(0.01)
+if User.Character.Humanoid.Sit == true then
+game:GetService("RunService"):UnbindFromRenderStep("Bring")
+wait(0.01)
+if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Main].Character.HumanoidRootPart.CFrame * CFrame.new(0,-1,-5)
+end
+break
+end
+end
+game:GetService("RunService"):BindToRenderStep("Tp", 0, function()
+if User.Character.Humanoid.Sit == false then
+if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,2009,0)
+end
+game:GetService("RunService"):UnbindFromRenderStep("Tp")
+end
+end)
+end
+end
+end)
+end)
+end
+end)
