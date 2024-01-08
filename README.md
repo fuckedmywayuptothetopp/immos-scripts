@@ -2,7 +2,7 @@
  
 [![Discord Presence](https://lanyard.cnrad.dev/api/1183889464129507378)](https://discord.com/users/1183889464129507378)
 
---- DISCORD SERVER LINK : discord.gg/SOONNEGRO (dont join on alts every alt will be banned this will be checked 24/7 either join on your main or dont fucking join, also people who look like alts will also be banned to keep immo and all his weird ass friends away from the server 😆) also server is being CREATED right now (05:52 in the morning 08.01.2024) link will most likely be posted tmrw)
+--- DISCORD SERVER LINK : discord.gg/SOONNEGRO (dont join on alts every alt will be banned this will be checked 24/7 either join on your main or dont fucking join, also people who look like alts will also be banned to keep immo and all his weird ass friends away from the server 😆) also server is being CREATED right now (05:52 in the morning 08.01.2024) link will most likely be posted tmrw
 
 ---Hello, Me and iux will make Better tutorials soon. we will be making videos for it too just wait these tutorials were rushed cuz we didnt have alot time so if you dont understand something just dm me or iux on discord.
 
