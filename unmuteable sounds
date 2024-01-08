@@ -1,0 +1,282 @@
+-- ok cuz i cba to make a good tutorial on this i make it in a easy way. (SCROLL DOWN FOR EVERYTHING RETARD THIS ISNT THE ONLY THING)
+-- this tutorial is very ass ik but this is simple as hell to use so stop crying
+
+-- REQUIREMENTS --
+-- 2 accounts (main and alt)
+-- RINGTONE GAMEPASS ON THE ACCOUNT YOU WANNA HAVE SOUNDS ON
+-- scroll down for rest cba to make tutorial
+
+function Ringtone(ID)
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+local Tool = nil
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Character
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+local args = {
+    [1] = "RingTone",
+    [2] = ID
+    
+}
+game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Backpack
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+if Tool ~= true then
+if Tool then
+Tool.Parent = game:GetService("Players").LocalPlayer.Character
+end
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+game.Players:chat("/e cm")
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+function Stop()
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+local Tool = nil
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Character
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Backpack
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+if Tool ~= true then
+if Tool then
+Tool.Parent = game:GetService("Players").LocalPlayer.Character
+end
+end
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+function Change(ID)
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+local Tool = nil
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Character
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+local args = {
+    [1] = "RingTone",
+    [2] = ID
+    
+}
+game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+game:GetService("Players").LocalPlayer.Backpack
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+if Tool ~= true then
+if Tool then
+Tool.Parent = game:GetService("Players").LocalPlayer.Character
+end
+end
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+function Call()
+game.Players:chat("/e cm")
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- ReCall
+function ReCall()
+Stop()
+game.Players:chat("/e cm")
+end
+--//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+-- Ringtone(ID)
+-- Stop()
+-- Change(ID)
+-- Call()
+-- ReCall()
+
+-- THIS IS FOR YOUR SCRIPTS UR USING ON YOUR MAIN (IT REQUIRES RINGTONE) Basically add it on the top like the old boombox play and instead of doing play(niggerid) do
+Ringtone(id)
+
+Heres an Example with dio tp : 
+
+if not game['Loaded'] or not game:GetService('Players')['LocalPlayer'] then
+    game['Loaded']:Wait();
+    game:WaitForChild(game:GetService('Players'));
+    game:GetService('Players'):WaitForChild(game:GetService('Players').LocalPlayer.Name)
+end
+
+TweenService = game:GetService("TweenService")
+rs = game:GetService("RunService")
+
+function Ringtone(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Play Sound 
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Stop Audio
+    function Stop()
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Change Id
+    function Change(ID)
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Save Tool
+    local Tool = nil
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+    Tool = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Parent = game:GetService("Players").LocalPlayer.Backpack
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Phone
+    game:GetService("Players").LocalPlayer.Backpack["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Character
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Fire Event
+    local args = {
+        [1] = "RingTone",
+        [2] = ID
+        
+    }
+    game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Unequip Phone
+    game:GetService("Players").LocalPlayer.Character["[Phone]"].Parent =
+    game:GetService("Players").LocalPlayer.Backpack
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Equip Saved Tool
+    if Tool ~= true then
+    if Tool then
+    Tool.Parent = game:GetService("Players").LocalPlayer.Character
+    end
+    end
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- Call
+    function Call()
+    game.Players:chat("/e cm")
+    end
+    --//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\-- End
+    -- Ringtone(ID)
+    -- Stop()
+    -- Change(ID)
+    -- Call()
+
+keybind = "x"
+player = game.Players.LocalPlayer
+mouse = player:GetMouse()
+mouse.KeyDown:connect(function(key)
+if key == keybind then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -50)
+    Ringtone(6603980575)
+        TweenService:Create(workspace.CurrentCamera, TweenInfo.new(0.5), {FieldOfView = 85}):Play()
+        TweenService:Create(game:GetService("Lighting").ColorCorrection, TweenInfo.new(0.8), {Saturation = -1}):Play()
+        local blur = Instance.new("BlurEffect", game:GetService("Lighting"))
+        TweenService:Create(blur, TweenInfo.new(0.8), {Size = 10}):Play()
+        wait(0.5)
+        TweenService:Create(workspace.CurrentCamera, TweenInfo.new(0.5), {FieldOfView = 70}):Play()
+        game:GetService("Lighting").ColorCorrection.TintColor = Color3.fromRGB(250, 250, 250)
+        TweenService:Create(blur, TweenInfo.new(0.8), {Size = 0}):Play()
+        wait(0.3)
+        TweenService:Create(game:GetService("Lighting").ColorCorrection, TweenInfo.new(0.8), {Saturation = 0}):Play()
+end
+end)
+
+
+-- Also to make the sounds work you need an alt on that you can exploit too.
+-- Execute this on your alt to make the sounds work.
+
+
+-- Anti Afk Ril --
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 9e9
+-- AntiCheat Bypass --
+assert(getrawmetatable)
+gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+old = gmt.__namecall
+gmt.__namecall =
+    newcclosure(
+        function(self, ...)
+        local args = {...}
+        if tostring(args[1]) == "BreathingHAMON" then
+            return
+        elseif tostring(args[1]) == "TeleportDetect" then
+            return
+        elseif tostring(args[1]) == "CHECKER_1" then
+            return
+        elseif tostring(args[1]) == "CHECKER" then
+            return
+        elseif tostring(args[1]) == "GUI_CHECK" then
+            return
+        elseif tostring(args[1]) == "OneMoreTime" then
+            return
+        elseif tostring(args[1]) == "checkingSPEED" then
+            return
+        elseif tostring(args[1]) == "BANREMOTE" then
+            return
+        elseif tostring(args[1]) == "PERMAIDBAN" then
+            return
+        elseif tostring(args[1]) == "KICKREMOTE" then
+            return
+        elseif tostring(args[1]) == "BR_KICKPC" then
+            return
+        end
+        return old(self, ...)
+        end)
+
+-- Chat Connect --
+local MainAccount = "yourmainsuserurusingthescriptsonnigger" -- MainAccount Username
+game.Players[MainAccount].Chatted:Connect(function(msg)
+if msg:lower() == "/e cm" then
+local A_1 = "PhoneCall"
+local A_2 = "yourmainsuserurusingthescriptsonnigger"
+local Event = game:GetService("ReplicatedStorage").MainEvent
+Event:FireServer(A_1, A_2)
+end
+end)
